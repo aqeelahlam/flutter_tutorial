@@ -13,7 +13,6 @@ class LocationDetail extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text(location.name),
-          titleTextStyle: AppBarTextStyle,
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
