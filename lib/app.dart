@@ -7,6 +7,11 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: LocationDetail(),
-        theme: ThemeData(textTheme: TextTheme(bodyText1: Body1TextStyle)));
+        theme: ThemeData(
+            textTheme: const TextTheme(
+          headline1: AppBarTextStyle,
+          headline2: TitleTextStyle,
+          bodyText1: Body1TextStyle,
+        )));
   }
 }

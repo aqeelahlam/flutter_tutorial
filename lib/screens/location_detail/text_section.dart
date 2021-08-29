@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tutorial/style.dart';
 
 class TextSection extends StatelessWidget {
   // Final means: Once you set it, you cant change it.
@@ -19,11 +20,14 @@ class TextSection extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(_hPad, 32, _hPad, 4.0),
             child: Text(
               _title,
-              style: Theme.of(context).textTheme.headline1,
+              style: Theme.of(context).textTheme.headline2,
             )),
         Container(
             padding: const EdgeInsets.fromLTRB(_hPad, 10, _hPad, _hPad),
-            child: Text(_body)),
+            child: Text(
+              _body,
+              style: Theme.of(context).textTheme.bodyText1,
+            )),
       ],
     );
   }
