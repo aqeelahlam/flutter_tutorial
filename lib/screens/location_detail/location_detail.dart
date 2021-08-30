@@ -5,14 +5,17 @@ import 'package:flutter_tutorial/models/location.dart';
 import 'package:flutter_tutorial/style.dart';
 
 class LocationDetail extends StatelessWidget {
+  final int _locationID;
+
+  LocationDetail(this._locationID);
+
   @override
   Widget build(BuildContext context) {
-    final locations = Location.fetchAll();
-    final location = locations.first;
+    final location = Location.fetchByID(_locationID);
 
     return Scaffold(
         appBar: AppBar(
-          title: Text(location.name),
+          title: Text(location!.name),
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,

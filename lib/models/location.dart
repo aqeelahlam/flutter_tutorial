@@ -8,20 +8,32 @@ class Location {
 
   Location(this.id, this.name, this.imagePath, this.facts);
 
+  static Location? fetchByID(int locationID) {
+    // Fetch all locations, iterate through them and obtain the location
+    // required, return it immediately
+
+    List<Location> locations = Location.fetchAll();
+    for (int i = 0; i < locations.length; i++) {
+      if (locations[i].id == locationID) {
+        return locations[i];
+      }
+    }
+  }
+
   static List<Location> fetchAll() {
     return [
-      Location(1, 'Kiyomizu-dera', 'assets/images/kiyomizu-dera.jpg', [
+      Location(0, 'Kiyomizu-dera', 'assets/images/kiyomizu-dera.jpg', [
         LocationFact('Summary',
             'Kiyomizu-dera, officially Otowa-san Kiyomizu-dera, is an independent Buddhist temple in eastern Kyoto. The temple is part of the Historic Monuments of Ancient Kyoto UNESCO World Heritage site.'),
         LocationFact('Architectural Style', 'Japanese Buddhist architecture.'),
       ]),
-      Location(2, 'Mount Fuji', 'assets/images/fuji.jpg', [
+      Location(1, 'Mount Fuji', 'assets/images/fuji.jpg', [
         LocationFact('Summary',
             'Japan’s Mt. Fuji is an active volcano about 100 kilometers southwest of Tokyo. Commonly called “Fuji-san,” it’s the country’s tallest peak, at 3,776 meters. A pilgrimage site for centuries, it’s considered one of Japan’s 3 sacred mountains, and summit hikes remain a popular activity. Its iconic profile is the subject of numerous works of art, notably Edo Period prints by Hokusai and Hiroshige.'),
         LocationFact('Did You Know',
             'There are three cities that surround Mount Fuji: Gotemba, Fujiyoshida and Fujinomiya.'),
       ]),
-      Location(3, 'Arashiyama Bamboo Grove', 'assets/images/arashiyama.jpg', [
+      Location(2, 'Arashiyama Bamboo Grove', 'assets/images/arashiyama.jpg', [
         LocationFact('Summary',
             'While we could go on about the ethereal glow and seemingly endless heights of this bamboo grove on the outskirts of Kyoto, the sight\'s pleasures extend beyond the visual realm.'),
         LocationFact('How to Get There',
